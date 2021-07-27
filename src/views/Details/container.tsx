@@ -1,16 +1,26 @@
-import { useTickersDetails } from "../../hooks/useTickersDetails";
+import { useTickerDetails } from "../../hooks/useTickerDetails";
+
+import Empty from "../../components/shared/Empty";
+import Error from "../../components/shared/Error";
 
 import DetailsComponent from "./component";
 
-export interface SelectedProps {
+export interface Props {
   selectedTicker: string;
 }
 
-// FIX-ME: any
-const Details = ({ selectedTicker }: SelectedProps) => {
-  const tickerData = useTickersDetails(selectedTicker);
+const Details = ({ selectedTicker }: Props) => {
+  const tickerData = useTickerDetails(selectedTicker);
 
-  return <>{selectedTicker && <DetailsComponent {...tickerData} />}</>;
+  if (!tickerData) {
+    return <Empty />;
+  }
+
+  if (tickerData.error) {
+    return <Error message="No Results Found" />;
+  }
+
+  return <DetailsComponent {...tickerData} />;
 };
 
 export default Details;

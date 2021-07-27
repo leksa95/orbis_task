@@ -1,49 +1,39 @@
 import TextField from "@material-ui/core/TextField";
 import Autocomplete from "@material-ui/lab/Autocomplete";
-import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
+
+import useGlobalStyles from "../../../hooks/useGlobalStyles";
 
 interface Props {
-  // FIX-ME: types
   onSetValue: (e: React.ChangeEvent<{}>) => void;
   getOptions: string[];
   onSelectTicker: (_: React.ChangeEvent<{}>, value: string) => void;
 }
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-        width: '100%'
-    },
-  })
-);
-
-// FIX-ME: width: 100% in class 
-
 const SearchComponent = ({ onSetValue, getOptions, onSelectTicker }: Props) => {
-  const styles = useStyles();
+  const styles = useGlobalStyles();
+
   return (
-    (
-        <Autocomplete
-          freeSolo
-          id="searchInput"
-          disableClearable
-          onInputChange={onSetValue}
-          options={getOptions}
-          onChange={onSelectTicker}
-          classes={{
-            root: styles.root
-          }}
-          renderInput={(params) => (
-            <TextField
-              {...params}
-              label="Search symbols or companies"
-              margin="normal"
-              InputProps={{ ...params.InputProps, type: "search" }}
-            />
-          )}
+    <Autocomplete
+      freeSolo
+      id="searchInput"
+      disableClearable
+      onInputChange={onSetValue}
+      options={getOptions}
+      onChange={onSelectTicker}
+      classes={{
+        root: styles.fullWidth,
+      }}
+      renderInput={(params) => (
+        <TextField
+          {...params}
+          label="Search symbols or companies"
+          margin="normal"
+          variant="outlined"
+          InputProps={{ ...params.InputProps, type: "search" }}
         />
-    )
-  )
+      )}
+    />
+  );
 };
 
 export default SearchComponent;
