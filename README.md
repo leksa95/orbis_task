@@ -2,7 +2,7 @@
 
 Application using polygon.io API.
 
-# Live Demo - https://leksa95.github.io/
+# Live Demo - https://leksa95.github.io/orbis_task
 
 # How to run the application locally
 
