@@ -4,6 +4,7 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     subTitle: {
       fontSize: "1rem",
+      marginTop: "15px",
       marginBottom: "14px",
       span: {
         fontSize: "1.2rem",

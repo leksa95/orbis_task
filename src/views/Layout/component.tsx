@@ -13,22 +13,13 @@ const LayoutComponent = () => {
   const globalStyles = useGlobalStyles();
   const styles = useStyles();
 
-  const [open, setOpen] = React.useState(false);
   const [selectedTicker, setSelectedTicker] = useState("");
-
-  const handleDrawerToggle = () => {
-    setOpen(!open);
-  };
 
   return (
     <div className={globalStyles.dFlex}>
       <CssBaseline />
-      <AppBar
-        open={open}
-        onDrawerToggle={handleDrawerToggle}
-        setSelectedTicker={setSelectedTicker}
-      />
-      <Drawer open={open} onDrawerToggle={handleDrawerToggle} />
+      <AppBar setSelectedTicker={setSelectedTicker} />
+      <Drawer />
       <main className={clsx(styles.content)}>
         <div className={styles.drawerHeader} />
         <Details selectedTicker={selectedTicker} />

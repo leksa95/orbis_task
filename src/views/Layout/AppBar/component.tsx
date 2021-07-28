@@ -8,16 +8,10 @@ import useStyles from "./useStyles";
 import Search from "../../../components/shared/Search";
 
 interface Props {
-  open: boolean;
-  onDrawerToggle: any;
-  setSelectedTicker: any;
+  setSelectedTicker: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const AppBarComponent = ({
-  open,
-  onDrawerToggle,
-  setSelectedTicker,
-}: Props) => {
+const AppBarComponent = ({ setSelectedTicker }: Props) => {
   const styles = useStyles();
 
   return (

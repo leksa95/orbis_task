@@ -9,8 +9,8 @@ interface Props {
 }
 
 const ChartComponent = ({ symbol }: Props) => {
-  const { results = [] }: any = useTickerChart(symbol);
-  const data = results.map((e: { c: string }) => ({
+  const results = useTickerChart(symbol);
+  const data = results.map((e: { c: number }) => ({
     value: e.c,
   }));
 

@@ -15,7 +15,6 @@ const useStyles = makeStyles((theme: Theme) =>
     drawerHeader: {
       display: "flex",
       alignItems: "center",
-      // necessary for content to be below app bar
       ...theme.mixins.toolbar,
       justifyContent: "center",
       marginTop: "15px",

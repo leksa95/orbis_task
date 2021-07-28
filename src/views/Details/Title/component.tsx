@@ -12,7 +12,7 @@ const TitleComponent = ({ symbol, name }: Props) => {
 
   return (
     <Typography variant="h6" className={styles.subTitle}>
-      <Typography component="span">{symbol}</Typography>
+      <Typography component="span">{symbol} </Typography>
       {name}
     </Typography>
   );

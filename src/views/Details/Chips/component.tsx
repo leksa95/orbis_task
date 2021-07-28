@@ -1,12 +1,13 @@
 import Typography from "@material-ui/core/Typography";
-import Chip from "@material-ui/core/Chip";
+import Chip, { ChipProps } from "@material-ui/core/Chip";
 
 import useStyles from "./useStyles";
 
-interface Props {
+type ChipColor = Pick<ChipProps, "color">;
+
+interface Props extends ChipColor {
   title: string;
   items: [];
-  color: any;
 }
 
 const ChipsComponent = ({ title, items, color }: Props) => {

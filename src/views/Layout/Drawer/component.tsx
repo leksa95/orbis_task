@@ -3,12 +3,7 @@ import Avatar from "@material-ui/core/Avatar";
 
 import useStyles from "./useStyles";
 
-interface Props {
-  open: boolean;
-  onDrawerToggle: any;
-}
-
-const DrawerComponent = ({ open, onDrawerToggle }: Props) => {
+const DrawerComponent = () => {
   const styles = useStyles();
 
   return (
