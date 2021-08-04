@@ -22,7 +22,10 @@ const LayoutComponent = () => {
       <Drawer />
       <main className={clsx(styles.content)}>
         <div className={styles.drawerHeader} />
-        <Details selectedTicker={selectedTicker} />
+        <Details 
+          selectedTicker={selectedTicker}
+          setSelectedTicker={setSelectedTicker}
+         />
       </main>
     </div>
   );

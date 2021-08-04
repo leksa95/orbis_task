@@ -1,4 +1,5 @@
 import Typography from "@material-ui/core/Typography";
+import NumberFormat from 'react-number-format';
 
 import useStyles from "./useStyles";
 
@@ -17,7 +18,13 @@ const AddressComponent = ({ hq_address, country, phone }: Props) => {
       <Typography variant="body2" className={styles.upperText}>
         {country}
       </Typography>
-      <Typography variant="body2">{phone}</Typography>
+      <Typography variant="body2">
+        <NumberFormat
+          value={phone}
+          displayType='text'
+          format="+# (###) ###-####"
+        />
+      </Typography>
     </>
   );
 };

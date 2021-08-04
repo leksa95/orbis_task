@@ -8,9 +8,10 @@ type ChipColor = Pick<ChipProps, "color">;
 interface Props extends ChipColor {
   title: string;
   items: [];
+  onClick?: (ticker: string) => () => void;
 }
 
-const ChipsComponent = ({ title, items, color }: Props) => {
+const ChipsComponent = ({ title, items, color, onClick }: Props) => {
   const styles = useStyles();
 
   return items.length === 0 ? null : (
@@ -20,7 +21,13 @@ const ChipsComponent = ({ title, items, color }: Props) => {
       </Typography>
       <div>
         {items?.map((el: string) => (
-          <Chip className={styles.tags} color={color} key={el} label={el} />
+          <Chip 
+            className={styles.tags} 
+            color={color} 
+            key={el} 
+            label={el}
+            onClick={onClick && onClick(el)}
+          />
         ))}
       </div>
     </div>

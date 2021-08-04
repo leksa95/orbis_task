@@ -26,6 +26,7 @@ interface Props {
   description: string;
   similar: [];
   tags: [];
+  onSelectTicker: (ticker: string) => () => void;
 }
 
 const DetailsComponent = ({
@@ -41,6 +42,7 @@ const DetailsComponent = ({
   description,
   similar,
   tags,
+  onSelectTicker,
 }: Props): ReactElement => {
   const globalStyles = useGlobalStyles();
 
@@ -70,8 +72,17 @@ const DetailsComponent = ({
           <Description description={description} />
         </Grid>
         <Grid item xs={6}>
-          <Chips title="Related Stocks" items={similar} color="primary" />
-          <Chips title="Tags" items={tags} color="secondary" />
+          <Chips 
+            title="Related Stocks"
+            items={similar}
+            color="primary" 
+            onClick={onSelectTicker} 
+          />
+          <Chips 
+            title="Tags"
+            items={tags}
+            color="secondary"
+          />
         </Grid>
       </Grid>
     </Container>
