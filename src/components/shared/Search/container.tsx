@@ -4,11 +4,11 @@ import { useTickerSearch } from "../../../hooks/useTickerSearch";
 
 import SearchComponent from "./component";
 
-const Search = ({
-  setSelectedTicker,
-}: {
+interface Props{
   setSelectedTicker: (ticker: string) => void;
-}) => {
+}
+
+const Search = ({setSelectedTicker}: Props) => {
   const [value, setValue] = useState("");
   const tickers = useTickerSearch(value);
 

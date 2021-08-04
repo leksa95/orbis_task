@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import Typography from "@material-ui/core/Typography";
 import Collapse from "@material-ui/core/Collapse";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
@@ -11,7 +11,7 @@ interface Props {
 }
 
 const DescriptionComponent = ({ description }: Props) => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const styles = useStyles();
 
   const toggleOpen = () => {
