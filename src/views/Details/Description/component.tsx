@@ -23,7 +23,7 @@ const DescriptionComponent = ({ description }: Props) => {
       <Typography variant="h6" className={styles.subTitle}>
         Description
       </Typography>
-      <Collapse in={open} collapsedHeight={50}>
+      <Collapse in={open} collapsedSize={50}>
         <Typography variant={"body1"}>{description}</Typography>
       </Collapse>
       {open ? (

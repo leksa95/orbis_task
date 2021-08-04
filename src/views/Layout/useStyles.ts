@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     content: {
       padding: theme.spacing(3),
-      marginLeft: 0,
+      margin: "50px 0 100px 0",
     },
   })
 );
